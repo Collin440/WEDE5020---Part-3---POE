@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Products - Bon Boni's Candy Stop</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <!-- Background Video -->
+  <video autoplay muted loop id="background-video">
+    <source src="Videos/Flying Red particles.mp4" type="video/mp4" />
+  </video>
+
+  <header>
+    <img src="Images/logo.png" alt="Bon Boni Logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+    <div class="cart">
+      <i class='bx bx-cart'></i>
+      <span class="cart-count">0</span>
+      <span class="cart-total">R0.00</span>
+    </div>
+  </header>
+
+  <main class="product-container">
+    <h1 class="gradient-heading">Sweet Dreams Are Made of These:</h1>
+
+    <div class="product-grid">
+      <!-- Product 1- Maynards Gummies -->
+      <div class="product-card">
+        <img src="Images/Maynards Spooky Gums.jpg" alt="Gummy Bears">
+        <h2>Maynards Spooky Gummies</h2>
+        <p>R15.00</p>
+        <button class="add-to-cart" data-price="15.00">Add to Cart</button>
+      </div>
+
+      <!-- Product 2 -Beacon Fizzers-->
+      <div class="product-card">
+        <img src="Images/Beacon Fizzer.jpg" alt="Sweets">
+        <h2>Beacon Fizzers</h2>
+        <p>R4.00</p>
+        <button class="add-to-cart" data-price="4.00">Add to Cart</button>
+      </div>
+
+      <!-- Product 3 - Cadbury Chocolate Bars -->
+      <div class="product-card">
+        <img src="Images/Cadbury Chocolate Bars.jpg" alt="Chocolate Bars">
+        <h2>Cadbury Chocolate Bars</h2>
+        <p>R17.00</p>
+        <button class="add-to-cart" data-price="17.00">Add to Cart</button>
+      </div>
+
+      <!-- Product 4 - Jelly Tots Originals -->
+      <div class="product-card">
+        <img src="Images/Jelly Tots Original.jpg" alt="Jelly Tots">
+        <h2>Jelly Tots Original</h2>
+        <p>R22.00</p>
+        <button class="add-to-cart" data-price="22.00">Add to Cart</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    let cartCount = 0;
+    let cartTotal = 0;
+
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', () => {
+        const price = parseFloat(button.getAttribute('data-price'));
+        cartCount++;
+        cartTotal += price;
+        document.querySelector('.cart-count').textContent = cartCount;
+        document.querySelector('.cart-total').textContent = `$${cartTotal.toFixed(2)}`;
+      });
+    });
+  </script>
+</body>
+</html>

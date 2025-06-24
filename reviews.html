@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Reviews - Bon Boni's Candy Stop</title>
+  <link rel="stylesheet" href="reviews.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <video autoplay muted loop id="background-video">
+    <source src="Videos/Shimmering Spiral Galaxy background.mp4" type="video/mp4" />
+    
+  </video>
+
+  <header class="main-header">
+    <div class="logo-area">
+      <img src="Images/logo.png" alt="Logo" class="logo" />
+      <span class="logo-text">Bon Boni's Candy Stop</span>
+    </div>
+    <nav class="nav-right">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="https://www.tiktok.com/@collinbeatz_dev" target="_blank"><i class='bx bxl-tiktok'></i></a>
+      <a href="https://wa.me/0646503212" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+    </nav>
+  </header>
+
+  <main class="reviews-section">
+    <h1>What Our Sweet Customers Say:</h1>
+
+    <div class="reviews-container">
+      <div class="review">
+        <img src="Images/reviews1.jpg" alt="Customer 1">
+        <div class="speech-bubble">
+          <p>This is the best candy shop ever! Everything is delicious and colorful! My boy absolutely loves this place! 10/10</p>
+        </div>
+      </div>
+
+      <div class="review">
+        <img src="Images/reviews2.jpg" alt="Customer 2">
+        <div class="speech-bubble">
+          <p>My kids (and my husband, HAHA!) absolutely love coming here! It’s a dreamland of sweets! 5 stars all the way!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="submit-review">
+        <h2>Share Your Experience</h2>
+        <form id="reviewForm">
+          <label for="photo">Upload Your Pics:</label>
+          <input type="file" id="photo" name="photo" accept="image/*" />
+      
+          <label for="review">Your Review:</label>
+          <textarea id="review" name="review" rows="4" placeholder="Write something sweet..."></textarea>
+      
+          <button type="submit">Submit Review</button>
+        </form>
+      
+        <div id="userReviews"></div>
+      </div>
+      
+      <script>
+        document.getElementById('reviewForm').addEventListener('submit', function(e) {
+          e.preventDefault();
+      
+          const photoInput = document.getElementById('photo');
+          const reviewText = document.getElementById('review').value;
+          const reviewsContainer = document.getElementById('userReviews');
+      
+          if (!photoInput.files[0] || !reviewText.trim()) {
+            alert('Please upload a photo and write a review!');
+            return;
+          }
+      
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            const userReview = document.createElement('div');
+            userReview.classList.add('review');
+      
+            userReview.innerHTML = `
+              <img src="${e.target.result}" alt="User photo" />
+              <div class="speech-bubble">
+                <p>${reviewText}</p>
+              </div>
+            `;
+      
+            reviewsContainer.appendChild(userReview);
+            document.getElementById('reviewForm').reset();
+          };
+      
+          reader.readAsDataURL(photoInput.files[0]);
+        });
+      </script>
+      
+      </form>
+    </div>
+  </main>
+</body>
+</html>

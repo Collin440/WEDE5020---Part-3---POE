@@ -1,0 +1,143 @@
+/* Background video */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+  }
+  
+  /* Header */
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    position: relative;
+  }
+  
+  .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .logo {
+    height: 60px;
+    width: auto;
+  }
+  
+  .logo-text {
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #00CED1, #FF69B4, #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .nav-right a {
+    font-size: 1.2rem;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-right a:hover {
+    color: #FF69B4;
+  }
+  
+  .nav-right i {
+    font-size: 1.5rem;
+  }
+  
+  /* Homepage Main Section */
+  .homepage {
+    padding: 4rem 2rem;
+    text-align: center;
+    color: white;
+  }
+  
+  .intro h1 {
+    font-size: 3rem;
+    background: linear-gradient(90deg, #00CED1, #FF69B4, #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .intro p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  }
+  
+  .cta-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    color: white;
+    background: linear-gradient(to right, #FF69B4, #FFA500);
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+  }
+  
+  .cta-button:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Carousel */
+  .home-carousel {
+    padding: 4rem 2rem;
+  }
+  
+  .carousel-wrapper {
+    overflow: hidden;
+    max-width: 90%;
+    margin: 0 auto;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .carousel-track {
+    display: flex;
+    width: calc(300px * 8); /* for 4 images duplicated */
+    animation: scroll-left 20s linear infinite;
+  }
+  
+  .carousel-track img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    margin: 1rem;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+  }
+  
+  .carousel-track img:hover {
+    transform: scale(1.05);
+  }
+  
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  

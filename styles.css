@@ -1,0 +1,373 @@
+/* styles.css */
+
+/* Background video styling */
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+  }
+  
+  /* Reset and base styles */
+  body {
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: white;
+    text-shadow: 1px 1px 2px #000;
+  }
+  
+  /* Header styles */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(255, 105, 180, 0.85); /* pink background with transparency */
+    position: relative;
+    z-index: 2;
+  }
+  
+  header img {
+    height: 60px;
+  }
+  
+  nav a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #FFD700; /* yellow on hover */
+  }
+  
+  /* Main section */
+  main {
+    text-align: center;
+    padding: 4rem 2rem;
+    z-index: 1;
+    position: relative;
+  }
+  
+  main h1 {
+    font-size: 3rem;
+    color: #FF69B4; /* bright pink */
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px #FFA500, 4px 4px #40E0D0, 6px 6px #FFD700;
+  }
+  
+  main p {
+    font-size: 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+  }
+  
+  /* Next button styling */
+  .next-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.75rem 2rem;
+    background-color: #FFA500;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .next-button:hover {
+    background-color: #FF8C00;
+    transform: scale(1.05);
+  }
+  
+  /* WhatsApp logo button */
+  .whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    border-radius: 50%;
+    padding: 0.8rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    z-index: 2;
+  }
+  
+  .whatsapp img {
+    width: 70px;
+    height: 70px;
+  }
+  
+  /* Image Carousel */
+.carousel {
+  width: 100%;
+  height: 300px; /* Collin, remeber to fix the height for consistency */
+  overflow: hidden;
+  margin-top: 2rem;
+  position: relative;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* Dots to indicate carousel movement */
+.carousel:after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.carousel:after div {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 2px;
+  transition: background-color 0.3s;
+}
+
+/* I will also style the carousel items while they're active */
+.carousel:after div.active {
+  background-color: #FF69B4;
+}
+
+/* Background video */
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+
+/* About Us */
+.about-container {
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Gradient Heading */
+.gradient-heading {
+  font-size: 3.5rem;
+  background: linear-gradient(90deg, #FF69B4, #FFA500, #00CED1, #FFD700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+/* Paragraph text */
+.about-content {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+/* Image styling */
+.about-images {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.about-images img {
+  width: 300px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.about-images img:hover {
+  transform: scale(1.05);
+}
+
+/* WhatsApp icon */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 2.5rem;
+  color: #25D366;
+  z-index: 10;
+}
+
+/* Product Store Link */
+.product-link {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  background-color: #FF69B4;
+  color: white;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.product-link:hover {
+  background-color: #FF1493;
+}
+
+/* Background video */
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+
+/* Product Page Container */
+.product-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Products Heading */
+.gradient-heading {
+  font-size: 3.5rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #FF69B4, #FFA500, #00CED1, #FFD700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+/* Product Card */
+.product-card {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+}
+
+.product-card h2 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.product-card p {
+  font-size: 1.2rem;
+  color: #FF69B4;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.add-to-cart {
+  background-color: #00CED1;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background-color: #20B2AA;
+}
+
+/* Cart Styling */
+.cart {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 2rem;
+  font-size: 1.2rem;
+  background: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.cart i {
+  color: #00CED1;
+  font-size: 1.5rem;
+}
+
+.cart-count {
+  background: #FF69B4;
+  color: #fff;
+  border-radius: 50%;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.9rem;
+}
+
+.cart-total {
+  font-weight: bold;
+  color: #333;
+}
+
+
+
